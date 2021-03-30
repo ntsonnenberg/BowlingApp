@@ -17,12 +17,19 @@ namespace BowlingApp.Controllers
 
         public int ItemsPerPage = 5;
 
+        //initializes a bowling league context
         public HomeController(ILogger<HomeController> logger, BowlingLeagueContext con)
         {
             _logger = logger;
             context = con;
         }
 
+        /**
+         * This is the Index method (parameters include the team id number, team name and current page number set to 1)
+         * A new index view model gets initialize in the method
+         * The view model contacts a list of bowlers, a PageInfo object (for navigation), and TeamName string
+         * Passes all the view model data to the index view to be used in the web page
+         */
         public IActionResult Index(long? teamid, string teamName, int pageNum = 1)
         {
             IndexViewModel IndexInfo = new IndexViewModel

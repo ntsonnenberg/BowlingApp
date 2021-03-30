@@ -11,8 +11,14 @@ using System.Threading.Tasks;
 
 namespace BowlingApp.Infrastructure
 {
+    /**
+     * This is the PaginationTagHelper class, which inherits from the TagHelper class
+     * it contains a private IUrlHelperFactory object, a PageInfo object, a Dictionary of the page number string (key) and the page number object (value),
+     * a ViewContext object, a PageClass string, a PageClassNormal string, and a PageClassSelected string
+     * The Process method is overrided in this class to build an a tag inside a div tag with all the specifications for page navigations (5 items per page)
+     */
     [HtmlTargetElement("div", Attributes = "page-info")]
-    public class PageLinkTagHelper : TagHelper
+    public class PaginationTagHelper : TagHelper
     {
         private IUrlHelperFactory urlInfo;
         public PageInfo PageInfo { get; set; }
@@ -25,7 +31,7 @@ namespace BowlingApp.Infrastructure
         public string PageClassNormal { get; set; }
         public string PageClassSelected { get; set; }
 
-        public PageLinkTagHelper(IUrlHelperFactory urlHelper)
+        public PaginationTagHelper(IUrlHelperFactory urlHelper)
         {
             urlInfo = urlHelper;
         }

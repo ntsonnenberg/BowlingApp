@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace BowlingApp.Models.ViewModels
 {
+    //The IndexViewModel class contains a list of Bowlers, a PageInfo object, and a TeamName string
     public class IndexViewModel
     {
         public List<Bowlers> Bowlers { get; set; }

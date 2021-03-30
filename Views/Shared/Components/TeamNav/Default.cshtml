@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<Teams>
 
+@*This webpage displays the navigation to filtered the bowlers by the team the user selects*@
 <a class="btn btn-block @(ViewBag.SelectedTeam == null ? "btn-success" : "btn-outline-dark")"
    asp-action="Index" 
    asp-controller="Home" 

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace BowlingApp.Models.ViewModels
 {
+    //The PageInfo class contains an ItemsPerPage integer, a CurrentPage integer, a TotalItems integer, and a NumOfPages integer
     public class PageInfo
     {
         public int ItemsPerPage { get; set; }
