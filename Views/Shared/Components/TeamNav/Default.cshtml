@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Teams>
+
+<a class="btn btn-block @(ViewBag.SelectedTeam == null ? "btn-success" : "btn-outline-dark")"
+   asp-action="Index" 
+   asp-controller="Home" 
+   asp-route-teamid="">Home</a>
+<br />
+
+@foreach(var team in Model)
+{
+    <a class="btn btn-block @(team.TeamName == ViewBag.SelectedTeam ? "btn-success" : "btn-outline-dark")"
+       asp-action="Index"
+       asp-controller="Home"
+       asp-route-teamid="@team.TeamId"
+       asp-route-teamname="@team.TeamName">@team.TeamName</a>
+    <br />
+}
